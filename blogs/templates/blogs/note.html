@@ -1,0 +1,32 @@
+{% extends 'blogs/base.html' %}
+{% load bootstrap4 %}
+
+{% block header %}
+
+
+{% endblock header %}
+
+{% block content %}
+<table class="table table-bordered table-dark">
+  <thead>
+    <tr>
+    <th scope="col">Title:</th>
+    <th scope="col">{{title}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Content:</th>
+      <td>{{text}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Date of creation or editing:</th>
+      <td>{{date}}</td>
+    </tr>
+  </tbody>
+
+</table>
+<a class="btn btn-primary" href="{% url 'blogs:edit_blog' note_id %}"
+role="button">edit note</a>
+
+{% endblock content %}

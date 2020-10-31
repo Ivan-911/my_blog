@@ -1,0 +1,17 @@
+{% extends 'blogs/base.html' %}
+{% load bootstrap4 %}
+{% block header %}
+   <h3>"Write here that you think. "</h3>
+{% endblock header %}
+   {% block content %}
+  <form  action="{% url 'blogs:new' %}" method='post'>
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+    <button tipe='botton' class="btn btn-success">
+      <i class="fa fa-floppy-o fa-1x" style="color: black" aria-hidden="true"></i>
+        add
+      </button>
+    {% endbuttons %}
+  </form>
+{% endblock content %}

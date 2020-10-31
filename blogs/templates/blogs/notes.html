@@ -1,0 +1,20 @@
+{% extends 'blogs/base.html' %}
+{% load bootstrap4 %}
+
+{% block header %}
+<h3>Notes</h3>
+{% endblock header %}
+
+{% block content %}
+
+
+ <ul>
+   {% for note in all_notes %}
+    <li>
+        <a href="{% url 'blogs:note' note.id %}"> {{note}}</a>
+    </li>
+   {% empty %}
+     <li> No notes have been added yet.</li>
+  {% endfor %}
+  </ul>
+{% endblock content %}
